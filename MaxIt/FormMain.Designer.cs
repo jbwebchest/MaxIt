@@ -28,12 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            labelTitle = new Label();
+            SuspendLayout();
+            // 
+            // labelTitle
+            // 
+            labelTitle.AutoSize = true;
+            labelTitle.Font = new Font("Impact", 72F, FontStyle.Regular, GraphicsUnit.Point);
+            labelTitle.ForeColor = Color.White;
+            labelTitle.Location = new Point(319, 50);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(330, 117);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "MAX IT!";
+            // 
+            // FormMain
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            ClientSize = new Size(984, 561);
+            Controls.Add(labelTitle);
+            DoubleBuffered = true;
+            MinimumSize = new Size(1000, 600);
+            Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MAX IT!";
+            Load += FormMainLoad;
+            Resize += FormMainResize;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label labelTitle;
     }
 }
