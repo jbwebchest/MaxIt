@@ -28,40 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelTitle = new Label();
+            components = new System.ComponentModel.Container();
+            timerLogo = new System.Windows.Forms.Timer(components);
+            labelLogo = new Label();
+            panelSettings = new Panel();
             SuspendLayout();
             // 
-            // labelTitle
+            // timerLogo
             // 
-            labelTitle.AutoSize = true;
-            labelTitle.Font = new Font("Impact", 72F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTitle.ForeColor = Color.White;
-            labelTitle.Location = new Point(319, 50);
-            labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(330, 117);
-            labelTitle.TabIndex = 0;
-            labelTitle.Text = "MAX IT!";
+            timerLogo.Interval = 1000;
+            // 
+            // labelLogo
+            // 
+            labelLogo.AutoSize = true;
+            labelLogo.Font = new Font("Impact", 72F, FontStyle.Regular, GraphicsUnit.Point);
+            labelLogo.ForeColor = Color.White;
+            labelLogo.Location = new Point(12, 339);
+            labelLogo.Name = "labelLogo";
+            labelLogo.Padding = new Padding(8, 0, 0, 0);
+            labelLogo.Size = new Size(469, 117);
+            labelLogo.TabIndex = 3;
+            labelLogo.Text = "WEBCHEST";
+            // 
+            // panelSettings
+            // 
+            panelSettings.Location = new Point(12, 481);
+            panelSettings.Name = "panelSettings";
+            panelSettings.Size = new Size(593, 68);
+            panelSettings.TabIndex = 1;
+            panelSettings.Resize += PanelLogoResize;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(984, 561);
-            Controls.Add(labelTitle);
+            ClientSize = new Size(1184, 561);
+            Controls.Add(labelLogo);
+            Controls.Add(panelSettings);
             DoubleBuffered = true;
-            MinimumSize = new Size(1000, 600);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MaximumSize = new Size(1200, 600);
+            MinimumSize = new Size(1200, 600);
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MAX IT!";
+            Text = "MAX IT";
             Load += FormMainLoad;
+            Shown += FormMainShown;
             Resize += FormMainResize;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label labelTitle;
+        private System.Windows.Forms.Timer timerLogo;
+        private Label labelLogo;
+        private Panel panelSettings;
     }
 }
